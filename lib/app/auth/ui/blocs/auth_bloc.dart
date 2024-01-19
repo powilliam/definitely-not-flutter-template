@@ -3,8 +3,6 @@ import 'package:flutter_template/app/auth/auth.dart';
 import 'package:get_it/get_it.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  final AuthRepository _repository = GetIt.instance<AuthRepository>();
-
   AuthBloc() : super(const AuthState()) {
     on<AuthSignedInAccountRequested>((event, emit) => null);
     on<AuthSignInRequested>(_onAuthSignInRequested);
@@ -16,6 +14,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     AuthSignInRequested event,
     Emitter<AuthState> emit,
   ) async {
+    GetIt.instance<AuthRepository>();
+
     emit(
       state.copyWith(
         isSignIn: true,

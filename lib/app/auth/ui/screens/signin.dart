@@ -24,7 +24,7 @@ class SignInScreen extends StatelessWidget {
                 }
               },
               builder: (context, state) => FilledButton.tonal(
-                onPressed: () => context.read<AuthBloc>().add(const AuthSignInRequested()),
+                onPressed: () => context.read<AuthBloc>().add(const AuthSignInRequested(SignInDTO())),
                 child: AnimatedSwitcher(
                   duration: const Duration(milliseconds: 170),
                   child: state.isSignIn ? const CircularProgressIndicator() : const Text('SignIn'),

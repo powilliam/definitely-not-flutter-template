@@ -9,31 +9,36 @@ sealed class AuthRepository {
 }
 
 class AuthRepositoryImpl implements AuthRepository {
-  final AuthLocalDataSource _localDataSource = GetIt.instance<AuthLocalDataSource>();
-  final AuthRemoteDataSource _remoteDataSource = GetIt.instance<AuthRemoteDataSource>();
-
-  AuthRepositoryImpl();
+  const AuthRepositoryImpl();
 
   @override
   Future<Account> getSignedInAccount() {
+    GetIt.instance<AuthLocalDataSource>();
+    GetIt.instance<AuthRemoteDataSource>();
     // TODO: implement getSignedInAccount
     throw UnimplementedError();
   }
 
   @override
   Future<Account> signIn() {
+    GetIt.instance<AuthLocalDataSource>();
+    GetIt.instance<AuthRemoteDataSource>();
     // TODO: implement signIn
     throw UnimplementedError();
   }
 
   @override
   Future<void> signOut() {
+    GetIt.instance<AuthLocalDataSource>();
+    GetIt.instance<AuthRemoteDataSource>();
     // TODO: implement signOut
     throw UnimplementedError();
   }
 
   @override
   Future<Account> signUp() {
+    GetIt.instance<AuthLocalDataSource>();
+    GetIt.instance<AuthRemoteDataSource>();
     // TODO: implement signUp
     throw UnimplementedError();
   }

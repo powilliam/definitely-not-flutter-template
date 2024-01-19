@@ -1,3 +1,5 @@
+import 'package:flutter_template/app/auth/auth.dart';
+
 sealed class AuthEvent {
   const AuthEvent();
 }
@@ -7,13 +9,19 @@ class AuthSignedInAccountRequested extends AuthEvent {
 }
 
 class AuthSignInRequested extends AuthEvent {
-  const AuthSignInRequested();
+  final SignInDTO dto;
+
+  const AuthSignInRequested(this.dto);
 }
 
 class AuthSignUpRequested extends AuthEvent {
-  const AuthSignUpRequested();
+  final SignUpDTO dto;
+
+  const AuthSignUpRequested(this.dto);
 }
 
 class AuthSignOutRequested extends AuthEvent {
-  const AuthSignOutRequested();
+  final SignOutDTO dto;
+
+  const AuthSignOutRequested(this.dto);
 }

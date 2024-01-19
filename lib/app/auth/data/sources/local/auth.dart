@@ -6,6 +6,8 @@ sealed class AuthLocalDataSource {
 }
 
 class AuthLocalDataSourceImpl implements AuthLocalDataSource {
+  const AuthLocalDataSourceImpl();
+
   @override
   Future<Map<String, dynamic>> getSignedInAccount() {
     // TODO: implement getSignedInAccount
